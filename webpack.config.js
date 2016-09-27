@@ -27,6 +27,7 @@ module.exports = {
     new WebpackHTML({
       title: 'Raio Webpackrizante'
     }),
-    extractCSS
+    extractCSS,
+    new webpack.optimize.UglifyJsPlugin()
   ]
 }
