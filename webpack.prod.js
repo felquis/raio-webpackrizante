@@ -1,8 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
-const CopyPlugin = require('copy-webpack-plugin')
 const ExtractText = require('extract-text-webpack-plugin')
 const extractCSS = new ExtractText('style.css')
+const WebpackHTML = require('html-webpack-plugin')
 
 module.exports = {
   entry: './app/index.js',
@@ -20,9 +20,9 @@ module.exports = {
     }]
   },
   plugins: [
-    new CopyPlugin([{
-      from: 'app/index.html'
-    }]),
+    new WebpackHTML({
+      title: 'Raio Webpackrizante'
+    }),
     extractCSS
   ]
 }

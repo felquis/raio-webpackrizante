@@ -1,6 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
-const CopyPlugin = require('copy-webpack-plugin')
+const WebpackHTML = require('html-webpack-plugin')
 
 module.exports = {
   entry: './app/index.js',
@@ -18,8 +18,8 @@ module.exports = {
     }]
   },
   plugins: [
-    new CopyPlugin([{
-      from: 'app/index.html'
-    }])
+    new WebpackHTML({
+      title: 'Raio Webpackrizante'
+    })
   ]
 }
