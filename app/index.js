@@ -1,4 +1,5 @@
-const styles = require('./styles.css')
+require('./styles.css')
+
 const look = require('./look')
 
-document.write(look)
+document.body.insertAdjacentHTML('afterbegin', look())

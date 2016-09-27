@@ -11,7 +11,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.css$/,
-      loader: 'style!css'
+      loader: 'style!css?modules&sourceMap'
     }, {
       test: /\.(svg|eot|woff|woff2|ttf)$/,
       loader: 'file'

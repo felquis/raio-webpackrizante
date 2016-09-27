@@ -13,7 +13,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.css$/,
-      loader: extractCSS.extract(['css'])
+      loader: extractCSS.extract(['css?modules'])
     }, {
       test: /\.(svg|eot|woff|woff2|ttf)$/,
       loader: 'file'
