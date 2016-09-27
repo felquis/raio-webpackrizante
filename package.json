@@ -14,10 +14,10 @@
     "custom": "echo \"This is a CUSTOM script\" && exit 0",
     "precustom": "echo \"This is a PRE CUSTOM script\" && exit 0",
     "postcustom": "echo \"This is a POST CUSTOM script\" && exit 0",
-    "dev-server": "webpack-dev-server --progress --colors --config webpack.dev.js",
+    "dev-server": "webpack-dev-server --progress --colors --config webpack.config.dev.js",
     "clean": "rm dist/*; exit 0",
     "static": "http-server dist",
-    "webpack": "webpack --progress --colors --config webpack.prod.js",
+    "webpack": "webpack --progress --colors --config webpack.config.js",
     "all": "npm run clean && npm run webpack && npm run static"
   },
   "keywords": [],
