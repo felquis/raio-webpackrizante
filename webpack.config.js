@@ -1,5 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
+const ExtractText = require('extract-text-webpack-plugin')
+const extractCSS = new ExtractText('style.css')
 const WebpackHTML = require('html-webpack-plugin')
 
 module.exports = {
@@ -11,7 +13,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.css$/,
-      loader: 'style!css?modules&sourceMap'
+      loader: extractCSS.extract(['css?modules'])
     }, {
       test: /\.(svg|eot|woff|woff2|ttf)$/,
       loader: 'file'
@@ -20,6 +22,7 @@ module.exports = {
   plugins: [
     new WebpackHTML({
       title: 'Raio Webpackrizante'
-    })
+    }),
+    extractCSS
   ]
 }
