@@ -3,26 +3,23 @@ const webpack = require('webpack')
 const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-  entry: "./index.js",
+  entry: './app/index.js',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: "bundle.js"
+    filename: 'bundle.js'
   },
   module: {
-    loaders: [
-      {
-        test: /\.css$/,
-        loader: "style!css"
-      },
-      {
-        test: /\.(svg|ttf|otf|eot|woff|woff2|png|jpg|gif)$/,
-        loader: "file"
-      }
-    ]
+    loaders: [{
+      test: /\.css$/,
+      loader: 'style!css'
+    }, {
+      test: /\.(svg|eot|woff|woff2|ttf)$/,
+      loader: 'file'
+    }]
   },
   plugins: [
-    new CopyPlugin([
-      { from: 'index.html' }
-    ])
+    new CopyPlugin([{
+      from: 'app/index.html'
+    }])
   ]
 }
