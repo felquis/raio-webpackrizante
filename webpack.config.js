@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const ExtractText = require('extract-text-webpack-plugin')
 const extractCSS = new ExtractText('style.css')
 const WebpackHTML = require('html-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
   entry: './app/index.js',
@@ -29,6 +30,7 @@ module.exports = {
       title: 'Raio Webpackrizante'
     }),
     extractCSS,
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin(),
+    new FaviconsWebpackPlugin(__dirname + '/app/images/logo.png')
   ]
 }
