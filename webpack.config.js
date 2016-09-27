@@ -17,6 +17,10 @@ module.exports = {
     }, {
       test: /\.(svg|eot|woff|woff2|ttf)$/,
       loader: 'file'
+    }, {
+      test: /\.js$/,
+      loader: 'babel',
+      query: { presets: ['es2015'] }
     }]
   },
   plugins: [
