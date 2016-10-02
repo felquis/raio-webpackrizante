@@ -10,3 +10,10 @@ var a = map( From(document.querySelectorAll('*')), (element, index) => {
 	element.setAttribute(`data-id`, index)
 	return element
 })
+
+import f from '../node_modules/fingerprintjs2'
+
+f().get((result, components) => {
+	console.log(result)
+	console.log(components)
+})
