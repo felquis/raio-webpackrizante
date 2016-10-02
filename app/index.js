@@ -13,7 +13,9 @@ var a = map( From(document.querySelectorAll('*')), (element, index) => {
 
 import f from '../node_modules/fingerprintjs2'
 
-f().get((result, components) => {
-	console.log(result)
-	console.log(components)
+new f().get((result, components) => {
+	document.body
+	.insertAdjacentHTML('beforeend', `<h1>Fingerprint: ${result}</h1>`)
+
+	console.log('components', components)
 })
